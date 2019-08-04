@@ -1,2 +1,0 @@
-# ReactReduxCards
-Created with CodeSandbox
