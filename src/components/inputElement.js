@@ -3,7 +3,6 @@ import { fade, withStyles, makeStyles } from "@material-ui/core/styles";
 
 import InputBase from "@material-ui/core/InputBase";
 import InputLabel from "@material-ui/core/InputLabel";
-
 import FormControl from "@material-ui/core/FormControl";
 
 const BootstrapInput = withStyles(theme => ({
@@ -51,7 +50,7 @@ const useStyles = makeStyles(theme => ({
 export default function CustomizedInputs(props) {
   const classes = useStyles();
 
-  console.log("CustomizedInputs props=", props);
+  //console.log("CustomizedInputs props=", props);
 
   const { title, value, index, onChange } = props;
 

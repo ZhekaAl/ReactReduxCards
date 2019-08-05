@@ -1,17 +1,6 @@
-import {
-  SET_DATA,
-  SET_MODE,
-  SET_FORM
-  //  ADD_FIRST,
-  //  ADD_LAST,
-  // REMOVE_FIRST,
-  // REMOVE_LAST
-} from "../actions/appActions";
-
-//import { serverPath } from '../config.js'
+import { SET_DATA, SET_MODE, SET_FORM } from "../actions/appActions";
 
 const initialState = {
-  //serverPath,
   mode: "list",
   data: [],
   form: {}
@@ -25,7 +14,6 @@ export function appReducer(state = initialState, action) {
       return { ...state, mode: action.payload };
     case SET_FORM:
       return { ...state, form: action.payload };
-    // return { ...state, data: [data[] };
 
     default:
       return state;

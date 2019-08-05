@@ -3,11 +3,7 @@ import PropTypes from "prop-types";
 
 import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
-//import { theme } from "/src/theme";
 import { connect } from "react-redux";
-//import Typography from "@material-ui/core/Typography";
-
-//import Icon from "@material-ui/core/Icon";
 import IconButton from "@material-ui/core/IconButton";
 import Gridon from "@material-ui/icons/GridOn";
 import Dehaze from "@material-ui/icons/Dehaze";
@@ -82,8 +78,6 @@ class Buttons extends React.Component {
   };
 
   render() {
-    //  console.log(theme.palette.primary);
-
     const { classes } = this.props;
 
     return (
@@ -124,24 +118,10 @@ class Buttons extends React.Component {
             Удалить последний
           </Button>
         </div>
-        <div
-          className={
-            /*{ ...classes.modeButtons, ...classes.line }*/
-            /* [classes.modeButtons, classes.line].join(" ")*/
-            classes.modeButtons + " " + classes.line
-          }
-        >
-          <div className={classes.subTitle}>
-            {/*<Typography variant="subtitle2" gutterBottom>*/}
-            Список объектов
-            {/*} </Typography>*/}
-          </div>
+        <div className={classes.modeButtons + " " + classes.line}>
+          <div className={classes.subTitle}>Список объектов</div>
 
           <div>
-            {/*//gridon
-            //apps
-            //dehaze*/}
-
             <IconButton
               color="primary"
               className={
@@ -170,8 +150,6 @@ class Buttons extends React.Component {
       </React.Fragment>
     );
   }
-
-  //PropTypes
 }
 
 const mapStateToProps = store => {
@@ -185,9 +163,6 @@ const mapDispatchToProps = dispatch => {
   return {
     setMode: val => dispatch(setMode(val)),
     setData: val => dispatch(setData(val))
-    //setActiveTab: val => dispatch(setActiveTab(val)),
-    // setLeftMenu: val => dispatch(setLeftMenu(val)),
-    //  setSettingsDialog: val => dispatch(setSettingsDialog(val)),
   };
 };
 

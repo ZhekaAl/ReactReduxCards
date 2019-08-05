@@ -5,7 +5,7 @@ import { withStyles } from "@material-ui/core/styles";
 import { connect } from "react-redux";
 import { setForm, setData } from "/src/actions/appActions";
 
-import InputElement from "./inputElement";
+import InputElement from "/src/components/inputElement";
 
 const styles = theme => ({
   base: {
@@ -77,14 +77,10 @@ class AddItemForm extends React.Component {
   };
 
   handleChangePoints = (key, value) => {
-    console.log("handleHeaderInputChanged", key, value);
-
+    //  console.log("handleHeaderInputChanged", key, value);
     if (value.length > maxLength) return;
-
     const { form } = this.props;
-
     if (!form) return;
-
     let points = form.points ? [...form.points] : [];
 
     if (key >= points.length && value !== "") {
@@ -180,9 +176,10 @@ const mapDispatchToProps = dispatch => {
 };
 
 AddItemForm.propTypes = {
-  addItemFormData: PropTypes.object,
-  setMode: PropTypes.func,
-  setForm: PropTypes.func
+  form: PropTypes.object.isRequired,
+  data: PropTypes.array.isRequired,
+  setData: PropTypes.func.isRequired,
+  setForm: PropTypes.func.isRequired
 };
 
 export default connect(

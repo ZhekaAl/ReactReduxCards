@@ -1,6 +1,7 @@
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 const styles = theme => ({
   baseStyles: {
@@ -52,8 +53,6 @@ class ListItems extends React.Component {
   choiceFlexDirection() {
     if (this.props.mode === "list") return { flexDirection: "row" };
     if (this.props.mode === "table") return { flexDirection: "row-reverse" };
-
-    //
   }
 
   getStylesAttributes() {
@@ -114,13 +113,8 @@ class ListItems extends React.Component {
   }
 
   render() {
-    //const { classes } = this.props;
     const { data, classes } = this.props;
-    /*  return (
-      <div className={classes.baseStyles} style={this.getCardListStyles()}>
-        {data ? data.map((item, i) => this.Card(item, i)) : ""}
-      </div>
-    );*/
+
     return (
       <div className={classes.baseStyles}>
         <div className={classes.flexGap} style={this.getCardListStyles()}>
@@ -139,6 +133,11 @@ const mapStateToProps = store => {
 };
 
 const mapDispatchToProps = null;
+
+ListItems.propTypes = {
+  data: PropTypes.array.isRequired,
+  mode: PropTypes.oneOf(["list", "table"]).isRequired
+};
 
 export default connect(
   mapStateToProps,
